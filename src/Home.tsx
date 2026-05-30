@@ -121,12 +121,12 @@ export default function Home() {
             setIsLoading(false);
             return;
           } else if (prankCount === 1) {
-            setPrankMessage(`Halo ${data.nama},\n\nHasil kelulusan berhasil diproses… siap mental dulu yuk coba 1 x lagi 🫣`);
+            setPrankMessage(`Halo ${data.nama},\n\nHasil kelulusan berhasil diproses… siap mental dulu yuk coba 1 lagi 🫣`);
             localStorage.setItem(prankKey, (prankCount + 1).toString());
             setIsLoading(false);
             return;
           } else if (prankCount === 2) {
-            setPrankMessage(`Halo ${data.nama},\n\nJangan panik… yang panik biasanya malah lulus, coba 1 x lagi pasti hasil nya muncul 😆`);
+            setPrankMessage(`Halo ${data.nama},\n\nJangan panik… yang panik biasanya malah lulus, coba 1 lagi pasti hasil nya muncul 😆`);
             localStorage.setItem(prankKey, (prankCount + 1).toString());
             setIsLoading(false);
             return;
