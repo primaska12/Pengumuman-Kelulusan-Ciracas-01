@@ -112,17 +112,17 @@ export default function Home() {
       const data = await res.json();
       
       if (res.ok) {
-        if (data.isPranked) {
-          const prankKey = `prank_v4_${data.nisn || data.noPeserta}`;
-          const prankCount = parseInt(localStorage.getItem(prankKey) || '0', 10);
-          
-          if (prankCount === 0) {
-            setPrankMessage(`Halo ${data.nama},\n\nData ditemukan… namun sistem mendeteksi jantung Anda berdetak terlalu cepat. Coba lagi 😅`);
-            localStorage.setItem(prankKey, (prankCount).toString());
-            setIsLoading(false);
-            return;
-          } 
-        }
+       if (data.isPranked) {
+  const prankKey = `prank_v4_${data.nisn || data.noPeserta}`;
+  const prankCount = parseInt(localStorage.getItem(prankKey) || '0', 10);
+
+  if (prankCount === 0) {
+    setPrankMessage(`Halo ${data.nama},\n\nData ditemukan… namun sistem mendeteksi jantung Anda berdetak terlalu cepat. Coba lagi 😅`);
+    localStorage.setItem(prankKey, '1');
+    setIsLoading(false);
+    return;
+  }
+}
         setSearchResult(data);
       } else {
         setError(data.error || 'Data siswa tidak ditemukan.');
