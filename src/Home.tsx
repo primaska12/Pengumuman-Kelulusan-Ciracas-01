@@ -118,20 +118,10 @@ export default function Home() {
           
           if (prankCount === 0) {
             setPrankMessage(`Halo ${data.nama},\n\nData ditemukan… namun sistem mendeteksi jantung Anda berdetak terlalu cepat. Coba lagi 😅`);
-            localStorage.setItem(prankKey, (prankCount + 1).toString());
+            localStorage.setItem(prankKey, (prankCount).toString());
             setIsLoading(false);
             return;
-          } else if (prankCount === 1) {
-            setPrankMessage(`Halo ${data.nama},\n\nHasil kelulusan berhasil diproses… siap mental dulu yuk coba 1 x lagi 🫣`);
-            localStorage.setItem(prankKey, (prankCount + 1).toString());
-            setIsLoading(false);
-            return;
-          } else if (prankCount === 2) {
-            setPrankMessage(`Halo ${data.nama},\n\nJangan panik… yang panik biasanya malah lulus, coba 1 x lagi pasti hasil nya muncul 😆`);
-            localStorage.setItem(prankKey, (prankCount + 1).toString());
-            setIsLoading(false);
-            return;
-          }
+          } 
         }
         setSearchResult(data);
       } else {
